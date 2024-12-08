@@ -20,7 +20,29 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    def check_strings(str_1, str_2):
+        if isinstance(str_1, str) is False or isinstance(str_2, str) is False:
+            return 0
+        elif str_1 == str_2:
+            return 1
+        elif len(str_1) > len (str_2):
+            return 2
+        elif str_2 == 'learn':
+            return 3  
     
+    # Ожидается 0
+    print(check_strings(123, '123h'))
+    # Ожидается 0
+    print(check_strings('123h', 123))
+    # Ожидается 1
+    print(check_strings('123h', '123h'))
+    # Ожидается 2
+    print(check_strings('123hппппп', '123h'))
+    # Ожидается 3
+    print(check_strings('123hп', 'learn'))
+    # Ожидается неизвестно что, т.к. не описано в ТЗ 
+    print(check_strings('123hп', 'learn456неен'))
+
+
 if __name__ == "__main__":
     main()
